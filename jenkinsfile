@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout code from version control
+                checkout scm
+            }
+        }
+
+        stage('Execute Bash Script') {
+            steps {
+                // Execute the Bash script
+                sh 'bash ls_script.sh'
+            }
+        }
+    }
+}
